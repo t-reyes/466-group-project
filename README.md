@@ -1,13 +1,23 @@
 # 466-group-project
-ER Diagram: https://imgur.com/a/eOIM6gE
+#### ER Diagram: 
+![alt text](https://imgur.com/a/uaAgKHv "Logo Title Text 1")
 
-Schema:
-User(userID, email, password, name, billingAddress)
-ShoppingCart(userID†, prodID†, quantity)
-Product(prodID, name, price, description, quantity, stockStatus)
-Ordered(orderID†, prodID†, quantity)
-Orders(orderID, userID†, shippingAddress, cost, orderStatus, trackingID)
-Fufillment(orderID†, empID†, fufillmentStatus)
-Employee(empID, isOwner)
+#### Schema:
 
-wip
+User(__userID__, email, password, name, billingAddress)
+
+ShoppingCart(__userID†__, __prodID†__, quantity)
+
+Product(__prodID__, name, price, description, quantity, stockStatus)
+
+Ordered(__orderID†, prodID__†, quantity)
+
+Orders(__orderID__, userID†, shippingAddress, cost, orderStatus, trackingID)
+
+Fufillment(__orderID†__, __empID†__, fufillmentStatus)
+
+Employee(__empID__, isOwner)
+
+__Bold__  primary key
+† foriegn key
+
