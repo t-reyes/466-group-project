@@ -20,3 +20,9 @@ Employee(__empID__, isOwner)
 
 __Bold__:primary key  --  †:foriegn key
 
+
+##TO DO
+
+split up the work
+
+think of over idea of website layout and design to get a general idea of form
