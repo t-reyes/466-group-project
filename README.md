@@ -37,9 +37,13 @@ checkout
 
 ordered costumer side - infomation
 
-order fulfillment employees
+order fulfillment employees - order
 
 login for user - start page 
 
-login for employee 
+owner page - add employee, orderfulfill, inventory
+
+add employee page 
+
+login for employee - 
 ```
