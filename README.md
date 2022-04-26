@@ -23,27 +23,30 @@ __Bold__:primary key  --  †:foriegn key
 
 ## TO DO
 
-user account - has order
+RS: user account - has order
 
-shoppping cart - enter order
+RS: shoppping cart - enter order
 
-inventory 
+MA: inventory 
 
-product - search bar
+PJ: product - search bar
 
-individual product pages - description, stock, add to shopping cart 
+PJ: individual product pages - description, stock, add to shopping cart 
 
-checkout
+RS: checkout
 
-ordered costumer side - infomation
+QL: ordered costumer side - infomation
 
-order fulfillment employees - order
+QL: order fulfillment employees - order
 
-login for user - start page 
+QL: order detail - employee side
 
-owner page - add employee, orderfulfill, inventory
+TR: login for user - start page 
 
-add employee page 
+MA: owner page - add employee, orderfulfill, inventory
 
-login for employee - 
+MA: add employee page 
+
+TR: login for employee - 
+```
 ```
