@@ -8,7 +8,7 @@ User(__userID__, email, password, name, billingAddress)
 
 ShoppingCart(__userID†__, __prodID†__, quantity)
 
-Product(__prodID__, name, price, description, quantity, stockStatus)
+Product(__prodID__, name, price, description, category, quantity, stockStatus)
 
 Ordered(__orderID†, prodID__†, quantity)
 
@@ -23,6 +23,23 @@ __Bold__:primary key  --  †:foriegn key
 
 ## TO DO
 
-split up the work
+user account - has order
 
-think of over idea of website layout and design to get a general idea of form
+shoppping cart - enter order
+
+inventory 
+
+product - search bar
+
+individual product pages - description, stock, add to shopping cart 
+
+checkout
+
+ordered costumer side - infomation
+
+order fulfillment employees
+
+login for user - start page 
+
+login for employee 
+```
