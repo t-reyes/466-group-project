@@ -48,5 +48,10 @@ MA: owner page - add employee, orderfulfill, inventory
 MA: add employee page 
 
 TR: login for employee - 
-```
+
+##PHP LOGIN CODE
+```php
+    $dsn = "mysql:host=courses;dbname=z1905494";
+    $pdo = new PDO($dsn, 'z1905494', '2000Apr04');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ```
