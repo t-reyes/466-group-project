@@ -49,7 +49,7 @@ MA: add employee page
 
 TR: login for employee - 
 
-##PHP LOGIN CODE
+## PHP LOGIN CODE
 ```php
     $dsn = "mysql:host=courses;dbname=z1905494";
     $pdo = new PDO($dsn, 'z1905494', '2000Apr04');
