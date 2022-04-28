@@ -1,1 +1,13 @@
 body {background-color:#45454e0a; color:#000000;}
+table, th, td {
+    border: 1px solid;
+    padding: 5%;
+  }
+  th, td {
+      padding: 0%;
+  }
+  .column {
+      float: left;
+      width: 30%;
+      box-sizing: border-box;
+  }
