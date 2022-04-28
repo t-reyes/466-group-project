@@ -25,8 +25,8 @@ YOU CAN MODIFY FOR YOUR OWN USE</br>
 error_reporting(E_ALL);
 include('dblogininfo_TOM.php'); // CHANGE TO TOMMY'S LATER
 try {
-    $dsn = "mysql:host=courses;dbname=$username";
-    $pdo = new PDO($dsn, $username, $password);
+    $dsn = "mysql:host=courses;dbname=$db_username";
+    $pdo = new PDO($dsn, $db_username, $db_password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
     $reset = isset($_POST['reset']) ? $_POST['reset'] : '';
