@@ -1,7 +1,5 @@
 <!--
 THIS IS SO YOU DON'T HAVE GO ONTO MARIA DB TO RESET THE DATABASE
-WILL WORK ONCE TOMMY PULLS INTO HIS public_html
-YOU CAN MODIFY FOR YOUR OWN USE
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +10,6 @@ YOU CAN MODIFY FOR YOUR OWN USE
 </head>
 <body>
 THIS IS SO YOU DON'T HAVE GO ONTO MARIA DB TO RESET THE DATABASE</br>
-WILL WORK ONCE TOMMY PULLS INTO HIS public_html</br>
-YOU CAN MODIFY FOR YOUR OWN USE</br>
 <div id="Reset">
     <b>Reset Database</b>
     <form action="resetdb.php" method="POST">
@@ -23,7 +19,7 @@ YOU CAN MODIFY FOR YOUR OWN USE</br>
 </div>
 <?php
 error_reporting(E_ALL);
-include('dblogininfo_TOM.php'); // CHANGE TO TOMMY'S LATER
+include('dblogininfo_TOM.php');
 try {
     $dsn = "mysql:host=courses;dbname=$db_username";
     $pdo = new PDO($dsn, $db_username, $db_password);
@@ -31,13 +27,7 @@ try {
 
     $reset = isset($_POST['reset']) ? $_POST['reset'] : '';
     if($reset) {
-        //
-        // CHANGE TO TOMMY'S LATER
-        //
         $sql = file_get_contents("database.sql");
-		//
-        //
-        //
         $prepared = $pdo->prepare($sql);
         $prepared->execute();
         echo "Successfully reset the database.";
