@@ -16,14 +16,14 @@ WILL WORK ONCE TOMMY PULLS INTO HIS public_html</br>
 YOU CAN MODIFY FOR YOUR OWN USE</br>
 <div id="Reset">
     <b>Reset Database</b>
-    <form action="http://students.cs.niu.edu/~z1905494/466-group-project/resetdb.php" method="POST">
+    <form action="resetdb.php" method="POST">
         <input type="hidden" name="reset" value="1"/>
         <input type="submit" value="reset"/>
     </form>
 </div>
 <?php
 error_reporting(E_ALL);
-include('dblogininfo_TOM'); // CHANGE TO TOMMY'S LATER
+include('dblogininfo_TOM.php'); // CHANGE TO TOMMY'S LATER
 try {
     $dsn = "mysql:host=courses;dbname=$username";
     $pdo = new PDO($dsn, $username, $password);
@@ -34,7 +34,7 @@ try {
         //
         // CHANGE TO TOMMY'S LATER
         //
-        $sql = file_get_contents("/home/turing/z1905494/public_html/466-group-project/database.sql");
+        $sql = file_get_contents("database.sql");
 		//
         //
         //
