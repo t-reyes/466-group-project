@@ -23,20 +23,35 @@
         try{
             foreach($row as $rows){
                 if($row[PASSWORD] == $password){
-                    ?>
-                    <body onload="document.forms[0].submit()">
-                    <form action="products.php" method="POST">
-                    <input type="hidden" name="username" value=""
-                    </form>
-                    <?
+                    echo "<body onload=\"document.forms[0].submit()\">";
+                    echo "<form action=\"products.php\" method=\"POST\">";   #add action link to products page
+                    echo "<input type=\"hidden\" name=\"username\" value=\"$username\">";
+                    echo "<input tpye=\"hidden\" name=\"password\" value=\"$password\">"; 
+                    echo "</form>";
                 }
                 else{
-
+                ?>
+                    <body>
+                    <p>Username or Password Incorrect</p>
+                    <form action="" method="POST">
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="text" name="password" placeholder="Password">
+                    <input type="submit" name="submit" value="Login">
+                    </form>
+                <?
                 }
             }
         }
         catch{
-
+        ?>
+            <body>
+            <p>Username or Password Incorrect</p>
+            <form action="" method="POST">
+            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="password" placeholder="Password">
+            <input type="submit" name="submit" value="Login">
+            </form>
+        <?
         }
     }
     catch(PDOexception $e) { // handle that exception
