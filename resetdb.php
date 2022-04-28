@@ -8,7 +8,7 @@ YOU CAN MODIFY FOR YOUR OWN USE
 <head>
 <title>Reset Database</title>
 <meta charset="utf-8">
-<link rel="stylesheet" href="color.css">
+<link rel="stylesheet" href="css/color.css">
 </head>
 <body>
 THIS IS SO YOU DON'T HAVE GO ONTO MARIA DB TO RESET THE DATABASE</br>
