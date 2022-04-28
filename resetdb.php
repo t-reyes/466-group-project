@@ -17,6 +17,13 @@ THIS IS SO YOU DON'T HAVE GO ONTO MARIA DB TO RESET THE DATABASE</br>
         <input type="submit" value="reset"/>
     </form>
 </div>
+<div id="Reset Data">
+    <b>Reset Database and Load Default Data</b>
+    <form action="resetdb.php" method="POST">
+        <input type="hidden" name="reset" value="2"/>
+        <input type="submit" value="reset"/>
+    </form>
+</div>
 <?php
 error_reporting(E_ALL);
 include('dblogininfo_TOM.php');
@@ -31,6 +38,12 @@ try {
         $prepared = $pdo->prepare($sql);
         $prepared->execute();
         echo "Successfully reset the database.";
+        if ($reset == 2) {
+            $sql = file_get_contents("database_data_default.sql");
+            $prepared = $pdo->prepare($sql);
+            $prepared->execute();
+            echo "Successfully loaded data.";
+        }
     }
 }
 catch(PDOexception $e) {
