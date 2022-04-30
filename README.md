@@ -1,4 +1,11 @@
 # 466-group-project
+===============================================================
+### ADD YOUR OWN LINK IF YOU USE public_html SO YOU CAN TEST YOUR PAGES EASIER
+[Tommy](http://students.cs.niu.edu/~z1905494/) - [http://students.cs.niu.edu/~z1905494/466-group-project/test_web_pages.html](http://students.cs.niu.edu/~z1905494/466-group-project/test_web_pages.html)
+
+[Quin](http://students.cs.niu.edu/~z1943410/) - [http://students.cs.niu.edu/~z1943410/466-group-project/test_web_pages.html](http://students.cs.niu.edu/~z1943410/466-group-project/test_web_pages.html)
+
+===============================================================
 #### ER Diagram: 
 ![alt text](https://i.imgur.com/zzbvd6Y.jpg "Logo Title Text 1")
 
