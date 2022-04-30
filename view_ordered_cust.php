@@ -15,12 +15,18 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
     $userid = isset($_POST['userid']);
-    $userid = 1;
 
+    echo "USERID = " . $userid;
+
+    if ($userid) {
     $prepared = $pdo->prepare("SELECT * FROM ORDERS  WHERE USERID = $userid;");
     $prepared->execute();
     $rows = $prepared->fetchAll(PDO::FETCH_ASSOC);
     draw_table($rows, 'ORDERS');
+    }
+    else {
+        echo "No userid.";
+    }
 }
 catch(PDOexception $e) {
     echo "Connection to database failed: " . $e->getMessage();
