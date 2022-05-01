@@ -41,11 +41,11 @@ catch(PDOexception $e) {
 function draw_table($rows, $table, $empid) {
     echo "<table>";
     // format display to specified table
-    echo "<th>" . "ORDERID" . "</th><th>" . "USERID" . "</th><th>" . "SADDRESS" . "</th><th>" . "SCITY" . "</th><th>" . "SSTATE" . "</th><th>" . "SZIP" . "</th><th>" . "TOTAL" . "</th><th>" . "ORDERSTATUS" . "</th><th>" . "TRACKINGID" . "</th><th></th>\n";
+    echo "<th>" . "ORDERID" . "</th><th>" . "ORDERSTATUS" . "</th><th>" . "TRACKINGID" . "</th><th></th>\n";
     foreach($rows as $row) {
         $oid = $row["ORDERID"];
         echo "<tr>";
-        echo "<td>" . $oid . "</td><td>" . $row["USERID"] . "</td><td>" . $row["SADDRESS"] . "</td><td>" . $row["SCITY"] . "</td><td>" . $row["SSTATE"] . "</td><td>" . $row["SZIP"] . "</td><td>" . $row["TOTAL"] . "</td><td>" . $row["ORDERSTATUS"] . "</td><td>" . $row["TRACKINGID"] . "</td><td>";
+        echo "<td>" . $oid . "</td><td>" . $row["ORDERSTATUS"] . "</td><td>" . $row["TRACKINGID"] . "</td><td>";
         echo "<form action=\"view_ordered_emp.php\" method=\"POST\">";
             echo "<input type=\"hidden\" name=\"orderid\" value=\"$oid\"/>";
             echo "<input type=\"hidden\" name=\"empid\" value=\"$empid\"/>";
