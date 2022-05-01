@@ -18,17 +18,26 @@ try {
     $orderid = isset($_POST['orderid']) ? $_POST['orderid'] : '';
     $fulfill = isset($_POST['fulfill']) ? $_POST['fulfill'] : '';
 
+    echo "<form action=\"view_ordered_emp_list.php\" method=\"POST\">";
+        echo "<input type=\"hidden\" name=\"empid\" value=\"$empid\"/>";
+        echo "<button type=\"submit\">Back</button>";
+    echo "</form>";
+
     echo "EMPID = " . $empid . "</br>";
     echo "ORDERID = " . $orderid . "</br>";
 
     if ($fulfill) {
         echo "Fulfill = " . $fulfill . "</br>";
+        $prepared = $pdo->prepare("UPDATE ORDERS SET ORDERSTATUS=? WHERE ORDERID=?;");
+        $prepared->execute(['SHIPPED', $orderid]);
+
+
         $prepared = $pdo->prepare("INSERT INTO FULFILLMENT (ORDERID, EMPID, COMMENTS) VALUES (?, ?, ?);");
         $prepared->execute([$orderid, $empid, $fulfill]);
         echo "Successfully fulfilled the order.";
     }
     else if ($empid && $orderid){
-        $prepared = $pdo->prepare("SELECT * FROM ORDERS WHERE ORDERID = $orderid AND ORDERID NOT IN (SELECT ORDERid FROM FULFILLMENT);");
+        $prepared = $pdo->prepare("SELECT * FROM ORDERS WHERE ORDERID = $orderid AND ORDERID NOT IN (SELECT ORDERID FROM FULFILLMENT);");
         $prepared->execute();
         $rows = $prepared->fetchAll(PDO::FETCH_ASSOC);
 
@@ -38,9 +47,26 @@ try {
             echo "<form action=\"view_ordered_emp.php\" method=\"POST\">";
                 echo "<input type=\"hidden\" name=\"empid\" value=\"$empid\"/>";
                 echo "<input type=\"hidden\" name=\"orderid\" value=\"$orderid\"/>";
-                echo "<input type=\"text\" name=\"fulfill\"/>";
+                echo "<input type=\"text\" name=\"fulfill\" value=\"None\"/>";
                 echo "<button type=\"submit\">Fulfill Order</button>";
-            echo "</form>";
+            echo "</form><br>";
+
+            foreach($rows as $row) {
+                $userid = $row["USERID"];
+            }
+
+            $prepared = $pdo->prepare("SELECT * FROM USERS WHERE USERID = ?;");
+            $prepared->execute([$userid]);
+            $rows = $prepared->fetchAll(PDO::FETCH_ASSOC);
+            foreach($rows as $row) {
+                $custname = $row["USERNAME"];
+                $custemail = $row["EMAIL"];
+            }
+
+            echo "Contact $custname via Email<br>";
+            echo "<a href=\"mailto:$custemail\">$custemail</a><br>";
+
+            echo "<br>etc<br>";
         }
         else {
             echo "This order has already been fulfilled.";
