@@ -1,4 +1,7 @@
-body {background-color:#45454e0a; color:#000000;}
+body {
+    background-color:#45454e0a;
+    color:#000000;
+}
 table, th, td {
     border: 1px solid;
     padding: 5%;

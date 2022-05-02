@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
         
-        $sql = "SELECT COUNT(USERNAME) FROM USERS WHERE USERNAME = '$username'";
+        $sql = "SELECT COUNT(EMPID) FROM U WHERE USERNAME = '$username'";
 
         $rs = $pdo->query($sql);
         $row = $rs->fetch(PDO::FETCH_BOTH);
@@ -37,8 +37,8 @@ if(isset($_POST['submit'])){
                 echo "<body>";
                 echo "<p>Password Incorrect</p>";
                 echo "<form action=\"\" method=\"POST\">";
-                echo "<input type=\"text\" name=\"username\" placeholder=\"Username\">";
-                echo "<input type=\"text\" name=\"password\" placeholder=\"Password\">";
+                echo "<input type=\"text\" name=\"username\" placeholder=\"Username\"><br>";
+                echo "<input type=\"text\" name=\"password\" placeholder=\"Password\"><br>";
                 echo "<input type=\"submit\" name=\"submit\" value=\"Login\">";
                 echo "</form>";
             }
@@ -47,8 +47,8 @@ if(isset($_POST['submit'])){
             echo "<body>";
             echo "<p>Username Incorrect</p>";
             echo "<form action=\"\" method=\"POST\">";
-            echo "<input type=\"text\" name=\"username\" placeholder=\"Username\">";
-            echo "<input type=\"text\" name=\"password\" placeholder=\"Password\">";
+            echo "<input type=\"text\" name=\"username\" placeholder=\"Username\"><br>";
+            echo "<input type=\"text\" name=\"password\" placeholder=\"Password\"><br>";
             echo "<input type=\"submit\" name=\"submit\" value=\"Login\">";
             echo "</form>";
        }
@@ -60,12 +60,13 @@ if(isset($_POST['submit'])){
 else{
     echo "<body>";
     echo "<form action=\"\" method=\"POST\">";
-    echo "<input type=\"text\" name=\"username\" placeholder=\"Username\">";
-    echo "<input type=\"text\" name=\"password\" placeholder=\"Password\">";
+    echo "<input type=\"text\" name=\"username\" placeholder=\"Username\"><br>";
+    echo "<input type=\"text\" name=\"password\" placeholder=\"Password\"><br>";
     echo "<input type=\"submit\" name=\"submit\" value=\"Login\">";
     echo "</form>";
 
 }
 ?> 
+<a href="http://students.cs.niu.edu/~z1905494/466-group-project/employeeLogin.php">Click here for Employee Login</a>
 </body>       
 </html>
