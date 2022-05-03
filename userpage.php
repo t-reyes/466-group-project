@@ -20,6 +20,11 @@
 
                 echo "<p>Update User Info</p>";
                 echo "<form>"
+                echo "<input type = \"text\">Email: </input>";
+                echo "<input type = \"text\">Address: </input>";
+                echo "<input type = \"text\">City: </input>";
+                echo "<input type = \"text\">State: </input>";
+                echo "<input type = \"text\">Zip: </input>";
                 echo "</form>"
             }
             catch(PDOexception $e) { // handle that exception
