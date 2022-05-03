@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
         $row = $rs->fetch(PDO::FETCH_BOTH);
 
         if($row[0] == 1){
-            $sql = "SELECT PASSWORD
+            $sql = "SELECT PASSWORD, USERID
                     FROM USERS
                     WHERE USERNAME = '$username';";
 
@@ -30,7 +30,8 @@ if(isset($_POST['submit'])){
                 echo "<body onload=\"document.forms[0].submit()\">";
                 echo "<form action=\"products.php\" method=\"POST\">";   #add action link to products page
                 echo "<input type=\"hidden\" name=\"username\" value=\"$username\">";
-                echo "<input tpye=\"hidden\" name=\"password\" value=\"$password\">"; 
+                echo "<input type=\"hidden\" name=\"password\" value=\"$password\">";
+                echo "<input type=\"hidden\" name=\"userid\" value=\"$rows[1]\">"; 
                 echo "</form>";
             }
             else{
