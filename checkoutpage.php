@@ -8,10 +8,23 @@
                 $pdo = new PDO($dsn, $db_username, $db_password);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                 
+<<<<<<< HEAD
+                $user = $_POST["userid"];
+                $sql = "SELECT *
+                        FROM CART
+                        WHERE USERID = '$user'";
+=======
                 $userid = $_POST["userid"];
+<<<<<<< HEAD
                 $sql = "SELECT PRODUCTS.PRODNAME, CART.QUANTITY, PRODUCTS.PRICE 
                         FROM CART, USERS, PRODUCTS
                         WHERE USERS.USERID = '$userid'";
+=======
+                $sql = "SELECT PRODUCT.PRODNAME CART.QUANTITY 
+                        FROM CART USERS PRODUCT
+                        WHERE USERS.USERID = '$userid' AND CART.PRODID = PRODUCT.PRODID";
+>>>>>>> 70ac0e897ed259d5dcb9892720a5ae9b2d905729
+>>>>>>> 3a7da91e0e457ec4ee37203a3ecfdb88c2d1a3de
                 $rs = $pdo->query($sql);
                 $rows = $rs->fetchAll(PDO::FETCH_ASSOC);
                 $total = 0;
