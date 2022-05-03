@@ -30,13 +30,13 @@
                     echo "<td>$row[QUANTITY]</td>";
                     $rowtotal = $row['QUANTITY'] * $row['PRICE'];
                     $total = $total + $rowtotal;
-                    echo "<td>\$$rowtotal</td>";
+                    echo "<td>\$" . number_format($rowtotal, 0) . "</td>";
                     echo "</tr>";
                 }
                     echo "<tr>";
                     echo "<th>TOTAL</th>";
                     echo "<td> </td>";
-                    echo "<th>\$$total</th>";
+                    echo "<th>\$" . number_format($total, 2) . "</th>";
                     echo "</tr>";
                 echo "</table>";
                 
@@ -70,6 +70,7 @@
                 echo "<input type=\"text\" name=\"state\" placeholder=\"State\">";
                 echo "<input type=\"text\" name=\"zip\" placeholder=\"Zip Code\"><br>";
                 echo "<input type=\"submit\" name=\"submit\" value=\"Place Order\">";
+                echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\">";
                 echo "</form>";
             }     
             catch(PDOexception $e) { // handle that exception
