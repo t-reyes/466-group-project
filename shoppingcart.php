@@ -8,10 +8,10 @@
                 $pdo = new PDO($dsn, $db_username, $db_password);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                 
-                $user = $_POST["user"];
+                $user = $_POST["userid"];
                 $sql = "SELECT *
                         FROM CART
-                        WHERE USERID = $user";
+                        WHERE USERID = '$user'";
                 $rs = $pdo->query($sql);
                 $rows = $rs->fetchAll(PDO::FETCH_ASSOC);   
             }
