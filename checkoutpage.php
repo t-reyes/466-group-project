@@ -64,7 +64,7 @@
                 
                 echo "<p>Enter Shipping Address and Credit Card</p>";
                 echo "<form action=\"createorder.php\" method=\"POST\">";
-                echo "<input type=\"text\" name=\"card\" placeholder=\"Credit Card\"><br>";
+                echo "<input type=\"hidden\" name=\"total\" value=\"$total\">";
                 echo "<input type=\"text\" name=\"address\" placeholder=\"Address\">";
                 echo "<input type=\"text\" name=\"city\" placeholder=\"City\"><br>";
                 echo "<input type=\"text\" name=\"state\" placeholder=\"State\">";
