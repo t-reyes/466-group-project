@@ -42,7 +42,7 @@ PJ: product - search bar
 
 PJ: individual product pages - description, stock, add to shopping cart 
 
-RS: checkout
+RS: checkout **COMPLETED**
 
 QL: ordered costumer side - infomation
 
@@ -50,12 +50,12 @@ QL: order fulfillment employees - order
 
 QL: order detail - employee side
 
-TR: login for user - start page 
+TR: login for user - start page **COMPLETED NEEDS CONNECTING**
 
 MA: owner page - add employee, orderfulfill, inventory
 
 MA: add employee page 
 
-TR: login for employee - 
+TR: login for employee - **COMPLETED NEEDS CONNECTING**
 ```
 ```
