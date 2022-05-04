@@ -16,7 +16,7 @@
                 echo "<input type=\"submit\" value=\"Inventory\">";
                 echo "</form>";
 
-                echo "<form action=\"view_ordered_emp.php\" method=\"POST\">";
+                echo "<form action=\"view_ordered_emp_list.php\" method=\"POST\">";
                 echo "<input type=\"submit\" value=\"Orders\">";
                 echo "</form>";
 
