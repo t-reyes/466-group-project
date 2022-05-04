@@ -36,7 +36,7 @@ RS: user account - has order
 
 RS: shoppping cart - enter order
 
-MA: inventory 
+TR: inventory   **COMPLETE NEED TO HOOK TO OWNER MENU** 
 
 PJ: product - search bar
 
