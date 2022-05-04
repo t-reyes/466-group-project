@@ -32,9 +32,9 @@ __Bold__:primary key  --  †:foriegn key
 
 ## TO DO
 
-RS: user account - has order
+RS: user account - has order  **COMPLETE NEEDS HOOKING TO PROD**
 
-RS: shoppping cart - enter order
+RS: shoppping cart - enter order  **COMPLETED**
 
 TR: inventory   **COMPLETE NEED TO HOOK TO OWNER MENU** 
 
