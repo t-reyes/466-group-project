@@ -34,11 +34,11 @@
                 // update user info
                 echo "<p>Update User Info</p>";
                 echo "<form action=\"userChanges.php\" method=\"POST\">"
-                echo "<input type = \"text\" value = \"$rows[2]\" name = \"Email\">Email: </input>";
-                echo "<input type = \"text\" value = \"$rows[3]\" name = \"Address\">Address: </input>";
-                echo "<input type = \"text\" value = \"$rows[4]\" name = \"City\">City: </input>";
-                echo "<input type = \"text\" value = \"$rows[5]\" name = \"State\">State: </input>";
-                echo "<input type = \"text\" value = \"$rows[6]\" name = \"Zip\">Zip: </input>";
+                echo "Email: <input type = \"text\" value = \"$rows[2]\" name = \"Email\">";
+                echo "Address: <input type = \"text\" value = \"$rows[3]\" name = \"Address\">";
+                echo "City: <input type = \"text\" value = \"$rows[4]\" name = \"City\">";
+                echo "State: <input type = \"text\" value = \"$rows[5]\" name = \"State\">";
+                echo "Zip: <input type = \"text\" value = \"$rows[6]\" name = \"Zip\">";
                 echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\">";
                 echo "</form>"
             }
