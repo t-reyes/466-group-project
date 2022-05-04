@@ -20,12 +20,13 @@
                 
 
                 echo "<p>Update User Info</p>";
-                echo "<form>"
-                echo "<input type = \"text\" value = >Email: </input>";
-                echo "<input type = \"text\">Address: </input>";
-                echo "<input type = \"text\">City: </input>";
-                echo "<input type = \"text\">State: </input>";
-                echo "<input type = \"text\">Zip: </input>";
+                echo "<form action=\"userChanges.php\" method=\"POST\">"
+                echo "<input type = \"text\" value = \"$rows[2]\" name = \"Email\">Email: </input>";
+                echo "<input type = \"text\" value = \"$rows[3]\" name = \"Address\">Address: </input>";
+                echo "<input type = \"text\" value = \"$rows[4]\" name = \"City\">City: </input>";
+                echo "<input type = \"text\" value = \"$rows[5]\" name = \"State\">State: </input>";
+                echo "<input type = \"text\" value = \"$rows[6]\" name = \"Zip\">Zip: </input>";
+                echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\">";
                 echo "</form>"
             }
             catch(PDOexception $e) { // handle that exception

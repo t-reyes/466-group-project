@@ -3,7 +3,6 @@
     <body><pre>
         <?php
             include('dblogininfo_TOM.php');
-            include('test_web_pages.html');
             try {
                 $dsn = "mysql:host=courses;dbname=$db_username";
                 $pdo = new PDO($dsn, $db_username, $db_password);
@@ -21,16 +20,18 @@
                 // remove things from cart
                 foreach($rows as $row){
                     foreach ($row as $key => $item) {
-                        echo "<form action=\"http://students.cs.niu.edu/~z1925687/itemRemoval.php\" method=\"POST\">";
-                        echo "<label for=\"part\">$item Quantity: </label>";
+                        echo "<form action=\"itemRemoval.php\" method=\"POST\">";
+                        echo "<label for=\"Item\">$item Quantity: </label>";
                         echo "<input type = \"number\" name = \"Quantity\"/>";
                         echo "<input type=\"submit\" value=\"Remove\"/>";
                         echo "<input type = \"hidden\" name = \"Item\" value =\"$item\"/>";
+                        echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\">";
                         echo "</form>";
                     }
                 }
-                echo "<form action = http://students.cs.niu.edu/~z1925687/checkoutpage.php" method=\"POST\">";
+                echo "<form action = \"checkoutpage.php\" method=\"POST\">";
                 echo "<input type=\"submit\" value=\"Checkout\"/>";
+                echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\">";
                 echo "</form>";
             }
             catch(PDOexception $e) { // handle that exception
