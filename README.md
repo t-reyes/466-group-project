@@ -42,7 +42,7 @@ TR: inventory   **COMPLETED**
 
 PJ: product - search bar  **COMPLETED**
 
-PJ: individual product pages - description, stock, add to shopping cart 
+PJ: individual product pages - description, stock, add to shopping cart **COMPLETED NEEDS CONNECTING**
 
 RS: checkout **COMPLETED**
 
