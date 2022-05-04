@@ -44,11 +44,11 @@ PJ: individual product pages - description, stock, add to shopping cart
 
 RS: checkout **COMPLETED**
 
-QL: ordered costumer side - infomation
+QL: ordered costumer side - infomation **COMPLETED NEEDS CONNECTING**
 
-QL: order fulfillment employees - order
+QL: order fulfillment employees - order **COMPLETED NEEDS CONNECTING**
 
-QL: order detail - employee side
+QL: order detail - employee side **COMPLETED NEEDS CONNECTING**
 
 TR: login for user - start page **COMPLETED NEEDS CONNECTING**
 
