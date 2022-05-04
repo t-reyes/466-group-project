@@ -13,7 +13,7 @@
                         FROM CART
                         WHERE USERID = '$user'";
                 $rs = $pdo->query($sql);
-                $rows = $rs->fetch(PDO::FETCH_BOTH);   
+                $rows = $rs->fetchAll(PDO::FETCH_ASSOC);   
                 echo "Shopping Cart";
                 //make table
                 echo "<table border = 1 cellspacing = 1>";
