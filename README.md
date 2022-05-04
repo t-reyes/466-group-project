@@ -38,7 +38,7 @@ RS: user account - has order  **COMPLETE NEEDS HOOKING TO PROD**
 
 RS: shoppping cart - enter order  **COMPLETED**
 
-TR: inventory   **COMPLETE NEED TO HOOK TO OWNER MENU** 
+TR: inventory   **COMPLETED** 
 
 PJ: product - search bar  **COMPLETED**
 
@@ -48,16 +48,16 @@ RS: checkout **COMPLETED**
 
 QL: ordered costumer side - infomation **COMPLETED NEEDS CONNECTING**
 
-QL: order fulfillment employees - order **COMPLETED NEEDS CONNECTING**
+QL: order fulfillment employees - order **COMPLETED**
 
-QL: order detail - employee side **COMPLETED NEEDS CONNECTING**
+QL: order detail - employee side **COMPLETED**
 
 TR: login for user - start page **COMPLETED NEEDS CONNECTING**
 
-MA: owner page - add employee, orderfulfill, inventory
+MA: owner page - add employee, orderfulfill, inventory **COMPLETED**
 
-MA: add employee page 
+MA: add employee page **COMPLETED**
 
-TR: login for employee - **COMPLETED NEEDS CONNECTING**
+TR: login for employee - **COMPLETED**
 ```
 ```
