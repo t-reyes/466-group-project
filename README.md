@@ -5,6 +5,8 @@
 
 [Quin](http://students.cs.niu.edu/~z1943410/) - [http://students.cs.niu.edu/~z1943410/466-group-project/test_web_pages.html](http://students.cs.niu.edu/~z1943410/466-group-project/test_web_pages.html)
 
+[Rochelle](http://students.cs.niu.edu/~z1925687/) - [http://students.cs.niu.edu/~z1925687/466-group-project/test_web_pages.html](http://students.cs.niu.edu/~z1925687/466-group-project/test_web_pages.html)
+
 ===============================================================
 #### ER Diagram: 
 ![alt text](https://i.imgur.com/zzbvd6Y.jpg "Logo Title Text 1")
@@ -40,7 +42,7 @@ PJ: product - search bar
 
 PJ: individual product pages - description, stock, add to shopping cart 
 
-RS: checkout
+RS: checkout **COMPLETED**
 
 QL: ordered costumer side - infomation
 
@@ -48,12 +50,12 @@ QL: order fulfillment employees - order
 
 QL: order detail - employee side
 
-TR: login for user - start page 
+TR: login for user - start page **COMPLETED NEEDS CONNECTING**
 
 MA: owner page - add employee, orderfulfill, inventory
 
 MA: add employee page 
 
-TR: login for employee - 
+TR: login for employee - **COMPLETED NEEDS CONNECTING**
 ```
 ```
