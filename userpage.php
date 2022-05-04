@@ -48,6 +48,10 @@
                 echo "<input type=\"hidden\" name=\"userid\" value=\"$user\">\n";
                 echo "<input type=\"submit\" value=\"Submit\">";
                 echo "</form>";
+                echo "<br><form action = \"product.php\" method=\"POST\">"; #hook to product page
+                echo "<input type=\"submit\" value=\"Back\">";
+                echo "<input type=\"hidden\" name=\"userid\" value\"$user\">";
+                echo "</form>";
             }
             catch(PDOexception $e) { // handle that exception
                 echo "Connection to database failed: " . $e->getMessage();

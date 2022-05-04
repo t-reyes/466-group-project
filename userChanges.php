@@ -13,7 +13,7 @@
         $state = $_POST["State"];
         $zip = $_POST["Zip"];
         $n = $pdo->exec("UPDATE USERS
-                        SET EMAIL = $email, BADDRESS = $address, BCITY = $city, BSTATE = $state, BZIP = $zip
+                        SET EMAIL = '$email', BADDRESS = '$address', BCITY = '$city', BSTATE = '$state', BZIP = '$zip'
                         WHERE USERID = '$user';");
         echo "Details Changed, Return to Account Page?";
         
