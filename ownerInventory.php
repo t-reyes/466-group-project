@@ -12,7 +12,9 @@ try { // if something goes wrong, an exception is thrown
     $pdo = new PDO($dsn, $db_username, $db_password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    if(isset($_POST['addprod'])){
+    $empid = $_POST['empid'];
+
+    if($_POST['addprod'] == '0'){
         $prodname = $_POST['prodname'];
         $price = $_POST['price'];
         $catagory = $_POST['catagory'];
@@ -27,7 +29,7 @@ try { // if something goes wrong, an exception is thrown
         
         $sql = "INSERT INTO PRODUCTS
                     (PRODNAME, PRICE, CATAGORY, DESCRIPTION, QUANTITY, STATUS)
-                    VALUES ('$prodname', $price, '$catagory', '$desc', $quantity, $status);"
+                    VALUES ('$prodname', $price, '$catagory', '$desc', $quantity, $status);";
 
         $pdo->exec($sql);
 
@@ -99,7 +101,6 @@ try { // if something goes wrong, an exception is thrown
 catch(PDOexception $e) { // handle that exception
     echo "Connection to database failed: " . $e->getMessage(); 
 }
-?>
-<a href="">Back</a> 
+?> 
 </body>       
 </html>

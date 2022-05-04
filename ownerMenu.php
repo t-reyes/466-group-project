@@ -18,6 +18,7 @@
                 echo "<form action=\"ownerInventory.php\" method=\"POST\">";
                 echo "<input type=\"submit\" value=\"Inventory\">";
                 echo "<input type=\"hidden\" name=\"empid\" value=\"$empid\">";
+                echo "<input type=\"hidden\" name=\"addprod\" value=\"nothing\">";
                 echo "</form>";
 
                 echo "<form action=\"view_ordered_emp_list.php\" method=\"POST\">";
@@ -29,7 +30,6 @@
                 echo "Connection to database failed: " . $e->getMessage();
             }
         ?>
-    </pre>
 <a href="employeeLogin.php">Log out</a>
-</body>
+        </pre></body>
 </html>
