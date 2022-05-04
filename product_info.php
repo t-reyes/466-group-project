@@ -5,23 +5,32 @@
 </head><body><pre>
 <?php
 include("dblogininfo_TOM.php");
-if(isset($_POST['search'])){
+if(isset($_POST['prodName'])){
     try { // if something goes wrong, an exception is thrown
         $dsn = "mysql:host=courses;dbname=$db_username";
         $pdo = new PDO($dsn, $db_username, $db_password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $search = $_POST['search'];
-        $sql = "SELECT PRODNAME, DESCRIPTION, PRICE, STATUS FROM PRODUCTS WHERE PRODNAME = '$search'";
         
+        $prodName = $_POST['prodName'];
+        $sql = "SELECT * FROM PRODUCTS WHERE PRODNAME = '$prodName'";
         $statement = $pdo->prepare($sql);
-        $statement->bindParam(1, $search, PDO::PARAM_STR);
         $statement->execute();
-
         $rows = $statement->fetchAll(PDO::FETCH_ASSOC); 
 
         if($rows) {
             draw_table($rows);
+            echo "<form action=\"shoppingcart.php\"  method=\"POST\">";
+            echo "<label for=\"quantity\">QTY:</label> <select name=\"quantity\" id=\"quantity\">";
+            echo "<option value='default'></option>";
+            foreach($rows as $row) {
+                $quantity = $row['QUANTITY'];
+                for ($i = 1; $i < $quantity + 1; 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$i++) {
+                    echo "<option value='$i'>$i</option>";
+                }
+            }
+            echo "</select><input type=\"submit\" name=\"submit\" value=\"Add to Shopping Cart\"/>";
+            echo "</form>";
+            
         }
         else {
             echo "Cannot find product.";
