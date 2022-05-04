@@ -16,7 +16,11 @@ try {
 
     $userid = isset($_POST['userid']) ? $_POST['userid'] : '';
 
-    echo "USERID = " . $userid;
+    // echo "USERID = " . $userid;
+    echo "<form action=\"\" method=\"POST\">";
+        echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\"/>";
+        echo "<button type=\"submit\">Back</button>";
+    echo "</form>";
 
     if ($userid) {
         $prepared = $pdo->prepare("SELECT * FROM ORDERS  WHERE USERID = $userid ORDER BY ORDERSTATUS;");

@@ -17,6 +17,11 @@ try {
     $empid = isset($_POST['empid']) ? $_POST['empid'] : '';
     $rows = '';
 
+    echo "<form action=\"\" method=\"POST\">";
+        echo "<input type=\"hidden\" name=\"empid\" value=\"$empid\"/>";
+        echo "<button type=\"submit\">Back</button>";
+    echo "</form>";
+
     if ($empid) {
         $prepared = $pdo->prepare("SELECT * FROM EMPLOYEES WHERE EMPID = $empid;");
         $prepared->execute();
@@ -24,7 +29,7 @@ try {
     }
 
     if ($rows) {
-        echo "EMPID = " . $empid;
+        // echo "EMPID = " . $empid;
 
         $prepared = $pdo->prepare("SELECT * FROM ORDERS WHERE ORDERID NOT IN (SELECT ORDERID FROM FULFILLMENT);");
         $prepared->execute();

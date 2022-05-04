@@ -23,11 +23,11 @@ try {
         echo "<button type=\"submit\">Back</button>";
     echo "</form>";
 
-    echo "EMPID = " . $empid . "</br>";
-    echo "ORDERID = " . $orderid . "</br>";
+    // echo "EMPID = " . $empid . "</br>";
+    // echo "ORDERID = " . $orderid . "</br>";
 
     if ($fulfill) {
-        echo "Fulfill = " . $fulfill . "</br>";
+        // echo "Fulfill = " . $fulfill . "</br>";
         $prepared = $pdo->prepare("UPDATE ORDERS SET ORDERSTATUS=? WHERE ORDERID=?;");
         $prepared->execute(['SHIPPED', $orderid]);
 
