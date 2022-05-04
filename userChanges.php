@@ -18,7 +18,7 @@
         echo "Details Changed, Return to Account Page?";
         
         echo "<form action = \"userpage.php\" method=\"POST\">";
-        echo "<input type=\"submit\" value=\"Return to Account\"/>";
+        echo "<input type=\"submit\" value=\"Return to Account\">";
         echo "<input type=\"hidden\" name=\"userid\" value=\"$user\">";
         echo "</form>";
     }
