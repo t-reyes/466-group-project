@@ -9,9 +9,9 @@
                 $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                 
                 $user = $_POST["userid"];
-                $sql = "SELECT *
-                        FROM CART
-                        WHERE USERID = '$user'";
+                $sql = "SELECT PRODUCTS.PRODNAME, CART.QUANTITY
+                        FROM CART, PRODUCTS, USERS
+                        WHERE USERS.USERID = '$user'";
                 $rs = $pdo->query($sql);
                 $rows = $rs->fetchAll(PDO::FETCH_ASSOC);   
                 echo "Shopping Cart";
@@ -31,7 +31,12 @@
                 }
                 echo "</table>";
 
-                // remove things from cart
+                $sql = "SELECT PRODUCTS.PRODNAME
+                        FROM CART, PRODUCTS, USERS
+                        WHERE USERS.USERID = '$user' AND CART.USERID = USERS.USERID";
+                $rs = $pdo->query($sql);
+                $rows = $rs->fetchAll(PDO::FETCH_ASSOC); 
+                // remove things from cart 
                 foreach($rows as $row){
                     foreach ($row as $key => $item) {
                         echo "<form action=\"itemRemoval.php\" method=\"POST\">";
@@ -39,13 +44,13 @@
                         echo "<input type = \"number\" name = \"Quantity\"/>";
                         echo "<input type=\"submit\" value=\"Remove\"/>";
                         echo "<input type = \"hidden\" name = \"Item\" value =\"$item\"/>";
-                        echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\">";
+                        echo "<input type=\"hidden\" name=\"userid\" value=\"$user\">";
                         echo "</form>";
                     }
                 }
                 echo "<form action = \"checkoutpage.php\" method=\"POST\">";
                 echo "<input type=\"submit\" value=\"Checkout\"/>";
-                echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\">";
+                echo "<input type=\"hidden\" name=\"userid\" value=\"$user\">";
                 echo "</form>";
             }
             catch(PDOexception $e) { // handle that exception
