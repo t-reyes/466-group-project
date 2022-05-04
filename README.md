@@ -7,6 +7,8 @@
 
 [Rochelle](http://students.cs.niu.edu/~z1925687/) - [http://students.cs.niu.edu/~z1925687/466-group-project/test_web_pages.html](http://students.cs.niu.edu/~z1925687/466-group-project/test_web_pages.html)
 
+[Princess](http://students.cs.niu.edu/~z1817575/) - [http://students.cs.niu.edu/~z1817575/466-group-project/test_web_pages.html](http://students.cs.niu.edu/~z1817575/466-group-project/test_web_pages.html)
+
 ===============================================================
 #### ER Diagram: 
 ![alt text](https://i.imgur.com/zzbvd6Y.jpg "Logo Title Text 1")
