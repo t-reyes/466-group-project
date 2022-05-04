@@ -1,6 +1,6 @@
 # 466-group-project
 #### ER Diagram: 
-![alt text](https://i.imgur.com/zzbvd6Y.jpg "Logo Title Text 1")
+![alt text](https://i.imgur.com/McAZbO7.png "Logo Title Text 1")
 
 ## Schema:
 
