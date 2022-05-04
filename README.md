@@ -26,7 +26,7 @@ Ordered(__orderID†, prodID__†, quantity)
 Orders(__orderID__, userID†, shippingAddress, cost, orderStatus, trackingID)
 
 Fufillment(__orderID†__, __empID†__, fufillmentStatus)
-
+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
 Employee(__empID__, isOwner)
 
 __Bold__:primary key  --  †:foriegn key
@@ -40,7 +40,7 @@ RS: shoppping cart - enter order  **COMPLETED**
 
 TR: inventory   **COMPLETE NEED TO HOOK TO OWNER MENU** 
 
-PJ: product - search bar
+PJ: product - search bar  **COMPLETED**
 
 PJ: individual product pages - description, stock, add to shopping cart 
 
