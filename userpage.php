@@ -3,7 +3,6 @@
     <body><pre>
         <?php
             include('dblogininfo_TOM.php');
-            include('test_web_pages.html');
             try {
                 $dsn = "mysql:host=courses;dbname=$db_username";
                 $pdo = new PDO($dsn, $db_username, $db_password);
@@ -16,9 +15,23 @@
                 $rs = $pdo->query($sql);
                 $rows = $rs->fetch(PDO::FETCH_BOTH);
                 echo "<p>User Information</p>";
-                drawTable($rows);
+                // make table
+                echo "<table border = 1 cellspacing = 1>";
+                echo "<tr>";
+                foreach($rows[0] as $key => $item){
+                    echo "<th>$key</th>";
+                }
+                echo "</tr>";
+                foreach($rows as $row){
+                    echo "<tr>";
+                    foreach($row as $key => $item){
+                        echo "<td>$item</td>";
+                    }
+                    echo "</tr>";
+                }
+                echo "</table>";
                 
-
+                // update user info
                 echo "<p>Update User Info</p>";
                 echo "<form action=\"userChanges.php\" method=\"POST\">"
                 echo "<input type = \"text\" value = \"$rows[2]\" name = \"Email\">Email: </input>";
