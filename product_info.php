@@ -5,14 +5,17 @@
 </head><body><pre>
 <?php
 include("dblogininfo_TOM.php");
-if(isset($_POST['prodName'])){
+$prodid = isset($_POST['prodid']) ? $_POST['prodid'] : '';
+if($prodid){
     try { // if something goes wrong, an exception is thrown
         $dsn = "mysql:host=courses;dbname=$db_username";
         $pdo = new PDO($dsn, $db_username, $db_password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        $prodName = $_POST['prodName'];
-        $sql = "SELECT * FROM PRODUCTS WHERE PRODNAME = '$prodName'";
+        $userid = isset($_POST['userid']) ? $_POST['userid'] : '';
+        $prodid = isset($_POST['prodid']) ? $_POST['prodid'] : '';
+
+        $sql = "SELECT * FROM PRODUCTS WHERE PRODID = '$prodid'";
         $statement = $pdo->prepare($sql);
         $statement->execute();
         $rows = $statement->fetchAll(PDO::FETCH_ASSOC); 
@@ -28,7 +31,9 @@ if(isset($_POST['prodName'])){
                     echo "<option value='$i'>$i</option>";
                 }
             }
-            echo "</select><input type=\"submit\" name=\"submit\" value=\"Add to Shopping Cart\"/>";
+            echo "</select><input type=\"submit\" value=\"Add to Shopping Cart\"/>";
+                echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\"/>";
+                echo "<input type=\"hidden\" name=\"prodid\" value=\"$prodid\"/>";
             echo "</form>";
             
         }

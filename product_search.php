@@ -13,19 +13,24 @@ try { // if something goes wrong, an exception is thrown
     $pdo = new PDO($dsn, $db_username, $db_password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    $userid = isset($_POST['userid']) ? $_POST['userid'] : '';
+
     $sql = "SELECT * FROM PRODUCTS";
     $rs = $pdo->query($sql);
     $rows = $rs->fetchAll(PDO::FETCH_ASSOC);
 
     echo "<form action=\"product_info.php\" method=\"POST\">";
-    echo "<label for=\"prodName\">Select a product:</label> <select name=\"prodName\" id=\"prodName\">";
+    echo "<label for=\"prodName\">Select a product:</label> <select name=\"prodid\" id=\"prodName\">";
             echo "<option value='default'></option>";
         foreach($rows as $row) {
             $name = $row['PRODNAME'];
-            echo "<option value='$name'>$name</option>";
+            $id = $row['PRODID'];
+            echo "<option value='$id'>$name</option>";
         }
         // echo "<option value=\"default\" selected></option>";
-    echo "</select><input type=\"submit\" name=\"submit\" value=\"Go to Product Detail\"/>";
+    echo "</select>";
+        echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\"/>";
+        echo "<input type=\"submit\" name=\"submit\" value=\"Go to Product Detail\"/>";
     echo "</form>";
 
 }

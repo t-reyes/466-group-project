@@ -52,8 +52,8 @@
                     echo "<input type=\"submit\" value=\"Submit\">";
                 echo "</form>";
                 echo "<br><form action = \"product_search.php\" method=\"POST\">";
+                    echo "<input type=\"hidden\" name=\"userid\" value=\"$user\">";
                     echo "<input type=\"submit\" value=\"View Products\">";
-                    echo "<input type=\"hidden\" name=\"userid\" value\"$user\">";
                 echo "</form>";
             }
             catch(PDOexception $e) { // handle that exception
