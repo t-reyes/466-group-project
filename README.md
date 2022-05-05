@@ -34,15 +34,15 @@ __Bold__:primary key  --  †:foriegn key
 
 ## TO DO
 
-RS: user account - has order  **WIP LINKS -> Product NEEDS SHOPPING CART AND VIEW ORDERS**
+RS: user account - has order  **WIP LINKS -> Product AND SHOPPING CART NEEDS VIEW ORDERS**
 
-RS: shoppping cart - enter order  **COMPLETED**
+RS: shoppping cart - enter order  **VERY SUS WITH 2nd PRODUCT IN DATABASE**
 
 TR: inventory   **COMPLETED** 
 
 PJ: product - search bar  **DONE LINKS -> Ind Prod**
 
-PJ: individual product pages - description, stock, add to shopping cart **COMPLETED NEEDS CONNECTING**
+PJ: individual product pages - description, stock, add to shopping cart **DONE LINKS -> Shopping Cart**
 
 RS: checkout **COMPLETED**
 
