@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
         
-        $sql = "SELECT COUNT(EMPID) FROM U WHERE USERNAME = '$username'";
+        $sql = "SELECT * FROM USERS WHERE USERNAME = '$username'";
 
         $rs = $pdo->query($sql);
         $row = $rs->fetch(PDO::FETCH_BOTH);
@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
 
             if($rows[0] == $password){
                 echo "<body onload=\"document.forms[0].submit()\">";
-                echo "<form action=\"products.php\" method=\"POST\">";   #add action link to products page
+                echo "<form action=\"userpage.php\" method=\"POST\">";
                 echo "<input type=\"hidden\" name=\"username\" value=\"$username\">";
                 echo "<input type=\"hidden\" name=\"password\" value=\"$password\">";
                 echo "<input type=\"hidden\" name=\"userid\" value=\"$rows[1]\">"; 

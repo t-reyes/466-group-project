@@ -24,7 +24,7 @@ if(isset($_POST['prodName'])){
             echo "<option value='default'></option>";
             foreach($rows as $row) {
                 $quantity = $row['QUANTITY'];
-                for ($i = 1; $i < $quantity + 1; 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$i++) {
+                for ($i = 1; $i < $quantity + 1; $i++) {
                     echo "<option value='$i'>$i</option>";
                 }
             }

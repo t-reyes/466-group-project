@@ -1,5 +1,8 @@
 <html>
     <head><title>User Account</title></head>
+    <br><form action ="userLogin.php" method="POST">
+        <input type="submit" value="Logout">
+    </form>
     <body><pre>
         <?php
             include('dblogininfo_TOM.php');
@@ -40,17 +43,17 @@
                 // update user info
                 echo "<p>Update User Info</p>";
                 echo "<form action=\"userChanges.php\" method=\"POST\">";
-                echo "Email:   <input type = \"text\" value = \"$rows[1]\" name = \"Email\">\n";
-                echo "Address: <input type = \"text\" value = \"$rows[2]\" name = \"Address\">\n";
-                echo "City:    <input type = \"text\" value = \"$rows[3]\" name = \"City\">\n";
-                echo "State:   <input type = \"text\" value = \"$rows[4]\" name = \"State\">\n";
-                echo "Zip:     <input type = \"text\" value = \"$rows[5]\" name = \"Zip\">\n";
-                echo "<input type=\"hidden\" name=\"userid\" value=\"$user\">\n";
-                echo "<input type=\"submit\" value=\"Submit\">";
+                    echo "Email:   <input type = \"text\" value = \"$rows[1]\" name = \"Email\">\n";
+                    echo "Address: <input type = \"text\" value = \"$rows[2]\" name = \"Address\">\n";
+                    echo "City:    <input type = \"text\" value = \"$rows[3]\" name = \"City\">\n";
+                    echo "State:   <input type = \"text\" value = \"$rows[4]\" name = \"State\">\n";
+                    echo "Zip:     <input type = \"text\" value = \"$rows[5]\" name = \"Zip\">\n";
+                    echo "<input type=\"hidden\" name=\"userid\" value=\"$user\">\n";
+                    echo "<input type=\"submit\" value=\"Submit\">";
                 echo "</form>";
-                echo "<br><form action = \"product.php\" method=\"POST\">"; #hook to product page
-                echo "<input type=\"submit\" value=\"Back\">";
-                echo "<input type=\"hidden\" name=\"userid\" value\"$user\">";
+                echo "<br><form action = \"product_search.php\" method=\"POST\">";
+                    echo "<input type=\"submit\" value=\"View Products\">";
+                    echo "<input type=\"hidden\" name=\"userid\" value\"$user\">";
                 echo "</form>";
             }
             catch(PDOexception $e) { // handle that exception
