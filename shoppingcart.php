@@ -32,6 +32,8 @@
                     }
 
                 }
+                $sql = "DELETE FROM CART WHERE QUANTITY <= 0;";
+                $pdo->exec($sql);
                 
                 $sql = "SELECT PRODUCTS.PRODNAME, CART.QUANTITY
                         FROM CART, PRODUCTS, USERS
