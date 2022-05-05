@@ -50,6 +50,6 @@ else{
     echo "</form>";
 }
 ?> 
-<a href="http://students.cs.niu.edu/~z1905494/466-group-project/userLogin.php">Click here for User Login</a>
+<a href="userLogin.php">Click here for User Login</a>
 </body>       
 </html>

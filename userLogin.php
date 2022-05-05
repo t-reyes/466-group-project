@@ -68,6 +68,6 @@ else{
 
 }
 ?> 
-<a href="http://students.cs.niu.edu/~z1905494/466-group-project/employeeLogin.php">Click here for Employee Login</a>
+<a href="employeeLogin.php">Click here for Employee Login</a>
 </body>       
 </html>
