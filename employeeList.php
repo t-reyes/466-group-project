@@ -8,6 +8,12 @@
                 $pdo = new PDO($dsn, $db_username, $db_password);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
+                $empid = isset($_POST['empid']) ? $_POST['empid'] : '';
+                echo "<form action=\"ownerMenu.php\" method=\"POST\">";
+                    echo "<input type=\"hidden\" name=\"empid\" value=\"$empid\"/>";
+                    echo "<button type=\"submit\">Back</button>";
+                echo "</form>";
+
                 $sql="SELECT * FROM EMPLOYEES";
                 $rs=$pdo->query($sql);
                 $rows =$rs->fetchAll(PDO::FETCH_ASSOC);
@@ -34,5 +40,5 @@
             }
         ?>
     </pre>
-<a href="ownerMenu.php">Back</a></body>
+<!--<a href="ownerMenu.php">Back</a></body>-->
 </html>

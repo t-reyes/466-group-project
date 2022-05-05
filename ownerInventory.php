@@ -13,6 +13,10 @@ try { // if something goes wrong, an exception is thrown
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
     $empid = $_POST['empid'];
+    echo "<form action=\"ownerMenu.php\" method=\"POST\">";
+        echo "<input type=\"hidden\" name=\"empid\" value=\"$empid\"/>";
+        echo "<button type=\"submit\">Back</button>";
+    echo "</form>";
 
     if($_POST['addprod'] == '0'){
         $prodname = $_POST['prodname'];

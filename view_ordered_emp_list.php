@@ -17,7 +17,7 @@ try {
     $empid = isset($_POST['empid']) ? $_POST['empid'] : '';
     $rows = '';
 
-    echo "<form action=\"\" method=\"POST\">";
+    echo "<form action=\"ownerMenu.php\" method=\"POST\">";
         echo "<input type=\"hidden\" name=\"empid\" value=\"$empid\"/>";
         echo "<button type=\"submit\">Back</button>";
     echo "</form>";
