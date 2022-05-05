@@ -34,7 +34,7 @@ __Bold__:primary key  --  †:foriegn key
 
 ## TO DO
 
-RS: user account - has order  **WIP LINKS -> Product AND SHOPPING CART NEEDS VIEW ORDERS**
+RS: user account - has order  **DONE LINKS -> Product AND SHOPPING CART AND ORDERS**
 
 RS: shoppping cart - enter order  **VERY SUS WITH 2nd PRODUCT IN DATABASE**
 
@@ -46,11 +46,11 @@ PJ: individual product pages - description, stock, add to shopping cart **DONE L
 
 RS: checkout **COMPLETED**
 
-QL: ordered costumer side - infomation **COMPLETED NEEDS CONNECTING**
+QL: ordered costumer side - infomation **DONE LINKS BACK -> user account**
 
 QL: order fulfillment employees - order **COMPLETED**
 
-QL: order detail - employee side **COMPLETED**
+QL: order detail - employee side **DONE LINKS BACK -> order fulfillment list**
 
 TR: login for user - start page **DONE LINKS ->  USER ACCOUNT**
 
