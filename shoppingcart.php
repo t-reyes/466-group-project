@@ -22,10 +22,10 @@
                             $prepared = $pdo->prepare("INSERT INTO CART (USERID, PRODID, QUANTITY) VALUES (?, ?, ?);");
                             $prepared->execute([$user, $prodid, $qty]);
 
-                            $prepared = $pdo->prepare("UPDATE PRODUCTS SET QUANTITY=QUANTITY-? WHERE PRODID=?;");
-                            $prepared->execute([$qty, $prodid]);
+                            // $prepared = $pdo->prepare("UPDATE PRODUCTS SET QUANTITY=QUANTITY-? WHERE PRODID=?;");
+                            // $prepared->execute([$qty, $prodid]);
 
-                            echo "Successfully fulfilled the order.\n";
+                            echo "Successfully added to cart.\n";
                     }
                     catch(PDOexception $e) {
                         echo "ERROR: You already have this product in cart.\n";
