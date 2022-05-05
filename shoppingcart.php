@@ -8,10 +8,29 @@
                 $pdo = new PDO($dsn, $db_username, $db_password);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                 
-                $user = $_POST["userid"];
+                $user = isset($_POST['userid']) ? $_POST['userid'] : '';
+                $prodid = isset($_POST['prodid']) ? $_POST['prodid'] : '';
+                $qty = isset($_POST['quantity']) ? $_POST['quantity'] : '';
+                
+                if ($prodid && $qty) {
+                    try {
+                            $prepared = $pdo->prepare("INSERT INTO CART (USERID, PRODID, QUANTITY) VALUES (?, ?, ?);");
+                            $prepared->execute([$user, $prodid, $qty]);
+
+                            $prepared = $pdo->prepare("UPDATE PRODUCTS SET QUANTITY=QUANTITY-? WHERE PRODID=?;");
+                            $prepared->execute([$qty, $prodid]);
+
+                            echo "Successfully fulfilled the order.\n";
+                    }
+                    catch(PDOexception $e) {
+                        echo "ERROR: You already have this product in cart.\n";
+                    }
+
+                }
+                
                 $sql = "SELECT PRODUCTS.PRODNAME, CART.QUANTITY
                         FROM CART, PRODUCTS, USERS
-                        WHERE USERS.USERID = '$user'";
+                        WHERE USERS.USERID = '$user' AND CART.USERID = USERS.USERID AND PRODUCTS.PRODID = CART.PRODID";
                 $rs = $pdo->query($sql);
                 $rows = $rs->fetchAll(PDO::FETCH_ASSOC);   
                 echo "Shopping Cart";
