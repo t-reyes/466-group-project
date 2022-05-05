@@ -15,6 +15,11 @@ try { // if something goes wrong, an exception is thrown
 
     $userid = isset($_POST['userid']) ? $_POST['userid'] : '';
 
+    echo "<form action=\"userpage.php\" method=\"POST\">";
+        echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\"/>";
+        echo "<button type=\"submit\">My Account</button>";
+    echo "</form>";
+
     $sql = "SELECT * FROM PRODUCTS";
     $rs = $pdo->query($sql);
     $rows = $rs->fetchAll(PDO::FETCH_ASSOC);

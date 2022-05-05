@@ -12,6 +12,11 @@
                 $prodid = isset($_POST['prodid']) ? $_POST['prodid'] : '';
                 $qty = isset($_POST['quantity']) ? $_POST['quantity'] : '';
                 
+                echo "<form action=\"userpage.php\" method=\"POST\">";
+                    echo "<input type=\"hidden\" name=\"userid\" value=\"$user\"/>";
+                    echo "<button type=\"submit\">My Account</button>";
+                echo "</form>";
+
                 if ($prodid && $qty) {
                     try {
                             $prepared = $pdo->prepare("INSERT INTO CART (USERID, PRODID, QUANTITY) VALUES (?, ?, ?);");

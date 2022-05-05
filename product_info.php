@@ -15,6 +15,11 @@ if($prodid){
         $userid = isset($_POST['userid']) ? $_POST['userid'] : '';
         $prodid = isset($_POST['prodid']) ? $_POST['prodid'] : '';
 
+        echo "<form action=\"userpage.php\" method=\"POST\">";
+            echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\"/>";
+            echo "<button type=\"submit\">My Account</button>";
+        echo "</form>";
+
         $sql = "SELECT * FROM PRODUCTS WHERE PRODID = '$prodid'";
         $statement = $pdo->prepare($sql);
         $statement->execute();
