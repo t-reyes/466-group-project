@@ -57,7 +57,7 @@
 
                 $sql = "SELECT PRODUCTS.PRODNAME
                         FROM CART, PRODUCTS, USERS
-                        WHERE USERS.USERID = '$user' AND CART.USERID = USERS.USERID";
+                        WHERE USERS.USERID = '$user' AND CART.USERID = USERS.USERID AND PRODUCTS.PRODID = CART.PRODID";
                 $rs = $pdo->query($sql);
                 $rows = $rs->fetchAll(PDO::FETCH_ASSOC); 
                 // remove things from cart 
