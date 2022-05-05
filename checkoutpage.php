@@ -11,7 +11,7 @@
                 $userid = $_POST["userid"];
                 $sql = "SELECT PRODUCTS.PRODNAME, CART.QUANTITY, PRODUCTS.PRICE 
                         FROM CART, USERS, PRODUCTS
-                        WHERE USERS.USERID = '$userid'";
+                        WHERE USERS.USERID = '$userid' AND CART.USERID = USERS.USERID AND PRODUCTS.PRODID = CART.PRODID";
                 $rs = $pdo->query($sql);
                 $rows = $rs->fetchAll(PDO::FETCH_ASSOC);
                 $total = 0;
