@@ -59,6 +59,10 @@
                     echo "<input type=\"hidden\" name=\"userid\" value=\"$user\">";
                     echo "<input type=\"submit\" value=\"View Shopping Cart\">";
                 echo "</form>";
+                echo "<br><form action = \"view_ordered_cust.php\" method=\"POST\">";
+                    echo "<input type=\"hidden\" name=\"userid\" value=\"$user\">";
+                    echo "<input type=\"submit\" value=\"View My Order\">";
+                echo "</form>";
             }
             catch(PDOexception $e) { // handle that exception
                 echo "Connection to database failed: " . $e->getMessage();

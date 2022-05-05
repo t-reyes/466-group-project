@@ -17,13 +17,13 @@ try {
     $userid = isset($_POST['userid']) ? $_POST['userid'] : '';
 
     // echo "USERID = " . $userid;
-    echo "<form action=\"\" method=\"POST\">";
+    echo "<form action=\"userpage.php\" method=\"POST\">";
         echo "<input type=\"hidden\" name=\"userid\" value=\"$userid\"/>";
-        echo "<button type=\"submit\">Back</button>";
+        echo "<button type=\"submit\">My Account</button>";
     echo "</form>";
 
     if ($userid) {
-        $prepared = $pdo->prepare("SELECT * FROM ORDERS  WHERE USERID = $userid ORDER BY ORDERSTATUS;");
+        $prepared = $pdo->prepare("SELECT ORDERS.*, ORDERED.QUANTITY FROM ORDERS, ORDERED  WHERE ORDERS.USERID = $userid AND ORDERS.ORDERID = ORDERED.ORDERID ORDER BY ORDERSTATUS;");
         $prepared->execute();
         $rows = $prepared->fetchAll(PDO::FETCH_ASSOC);
         $orderids = draw_table($rows, 'ORDERS');
@@ -60,11 +60,11 @@ function draw_table($rows, $table) {
 
                 if ($last_status != $curr_status) {
                     echo "</table><br><h3>$curr_status</h3><table>";
-                    echo "<th>" . "ORDERID" . "</th><th>" . "USERID" . "</th><th>" . "SADDRESS" . "</th><th>" . "SCITY" . "</th><th>" . "SSTATE" . "</th><th>" . "SZIP" . "</th><th>" . "TOTAL" . "</th><th>" . "ORDERSTATUS" . "</th><th>" . "TRACKINGID" . "</th>\n";
+                    echo "<th>" . "ORDERID" . "</th><th>" . "USERID" . "</th><th>" . "SADDRESS" . "</th><th>" . "SCITY" . "</th><th>" . "SSTATE" . "</th><th>" . "SZIP" . "</th><th>" . "QUANTITY" . "</th><th>" . "TOTAL" . "</th><th>" . "ORDERSTATUS" . "</th><th>" . "TRACKINGID" . "</th>\n";
                 }
 
                 echo "<tr>";
-                echo "<td>" . $row["ORDERID"] . "</td><td>" . $row["USERID"] . "</td><td>" . $row["SADDRESS"] . "</td><td>" . $row["SCITY"] . "</td><td>" . $row["SSTATE"] . "</td><td>" . $row["SZIP"] . "</td><td>" . $row["TOTAL"] . "</td><td>" . $row["ORDERSTATUS"] . "</td><td>" . $row["TRACKINGID"] . "</td>\n";
+                echo "<td>" . $row["ORDERID"] . "</td><td>" . $row["USERID"] . "</td><td>" . $row["SADDRESS"] . "</td><td>" . $row["SCITY"] . "</td><td>" . $row["SSTATE"] . "</td><td>" . $row["SZIP"] . "</td><td>" . $row["QUANTITY"] . "</td><td>" . $row["TOTAL"] . "</td><td>" . $row["ORDERSTATUS"] . "</td><td>" . $row["TRACKINGID"] . "</td>\n";
                 echo "</tr>";
                 $last_status = $curr_status;
             }
